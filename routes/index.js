@@ -10,7 +10,7 @@ const API_KEY = process.env.API_KEY;
 router.get('/', async (req, res) => {
 
  try {
-  const apiRes = await needle('get', `${BASE_URL}?${API_NAME}=${API_KEY}&count=25`);
+  const apiRes = await needle('get', cors(corsOptions), `${BASE_URL}?${API_NAME}=${API_KEY}&count=25`);
 
   const data = apiRes.body;
  
